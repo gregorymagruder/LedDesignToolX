@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>LED Animatrix V0.1</title>
+    <script>
+    window.$ = window.jQuery = require('jquery');
+    </script>
+    <script src='https://cdn.rawgit.com/YuriGor/jquery.panzoom/ignoreChildrensEvents/dist/jquery.panzoom.min.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/jsplumbtoolkit.css"> -->
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+
+
+<script>
+    import VModal from 'vue-js-modal';
+    import Vue from 'vue';
+    import App from './App';
+    import VTooltip from 'v-tooltip'
+    import VueProgressBar from 'vue-progressbar'
+    import vSelect from 'vue-select'
+    // import 'vue-select/dist/vue-select.css';
+
+    Vue.component('v-select', vSelect)
+
+    Vue.use(VueProgressBar, {
+        color: 'rgb(143, 255, 199)',
+        failedColor: 'red',
+        height: '2px'
+    })    
+    Vue.use(VTooltip);
+    Vue.use(VModal, { dialog: true })
+    Vue.use(require('vue-shortkey'));
+
+    const app = new Vue(App).$mount('#app');
+
+    app.text = "LED Animatrix";
+</script>
+
+</html>
